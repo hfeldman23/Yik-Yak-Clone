@@ -12,14 +12,15 @@ class ApplicationController < Sinatra::Base
   get "/" do
     @all_yaks = Yak.all
     puts @all_yaks
+    puts Time.now.strftime("%m %d %t")
     erb :index
-    
+
   end
-  
+
   post '/new_yak' do
     Yak.create({:message => params[:message]})
     redirect to "/"
-    
+
   end
-  
+
 end
