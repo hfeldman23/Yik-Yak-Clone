@@ -6,16 +6,15 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css" type="text/css">
    <h1 align="center">Yik Yak</h1>
-   <h2>These are your current Fweets:</h2>
+   <h2>Yaks</h2>
    <ul>
-     <% @all_tweets.each do |tweet| %>
-     <li>Username: <%=tweet.username %> - Message: <%=tweet.message %></li>
+     <% @all_yaks.each do |tweet| %>
+     <li>Message: <%=yak.message %></li>
      <% end %>
    </ul>
-   <form action="/new_tweet" method="POST">
-     <input type="text" name="username" placeholder="Username">
-     <input type="text" name="message" placeholder="140 Characters or Less:">
-     <input type="submit" value="Make a New Fweet">
+   <form action="/new_yak" method="POST">
+     <input type="text" name="message" placeholder="Enter a Yak">
+     <input type="submit" value="Make a new Yak">
    </form>
  </head>
  <body>
