@@ -2,22 +2,23 @@
 <html>
  <head>
   <meta charset="UTF-8">
-  <title>Fwitter</title>
+  <title>Yik-Yak Clone</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css" type="text/css">
    <h1 align="center">Yik Yak</h1>
-   <h2>Yaks</h2>
-   <ul>
+   <h2 align="center">Yaks</h2>
+   <ul align="center">
      <% @all_yaks.each do |yak| %>
-     <li>Message: <%=yak.message %></li>
+     <li>Message: <%=yak.message %> <%=yak.timestamp %></li>
      <% end %>
    </ul>
+   <div align="center">
    <form action="/new_yak" method="POST">
      <input type="text" name="message" placeholder="Enter a Yak">
      <input type="submit" value="Make a new Yak">
    </form>
+   </div>
  </head>
  <body>
-  
  </body>
 </html>

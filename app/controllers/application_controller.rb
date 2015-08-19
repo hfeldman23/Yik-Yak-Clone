@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/new_yak' do
-    Yak.create({:message => params[:message]})
+    Yak.create({:message => params[:message], :timestamp => params[:timestamp]})
     redirect to "/"
 
   end
