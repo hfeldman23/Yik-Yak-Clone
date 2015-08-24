@@ -1,4 +1,4 @@
-class User <Activerecord::Base
+class User < ActiveRecord::Base
   has_many :yaks
-  
 end
+
