@@ -1,5 +1,6 @@
 require "./config/environment"
 require "./app/models/Yak"
+# require "./app/models/user"
 
 class ApplicationController < Sinatra::Base
 
@@ -12,15 +13,20 @@ class ApplicationController < Sinatra::Base
   get "/" do
     @all_yaks = Yak.all
     puts @all_yaks
-    puts Time.now.strftime("%m %d %t")
     erb :index
 
   end
 
   post '/new_yak' do
-    Yak.create({:message => params[:message], :timestamp => params[:timestamp]})
-    redirect to "/"
-
+    Yak.create({:message => params[:message], :timestamp => Time.new.local})
+    redirect "/"
   end
 
+  post'/login' do
+    User.create({:username => params[:username], :email => params[:email]})
+    redirect "/"
+  end
+  
+  
+  
 end
