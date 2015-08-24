@@ -7,14 +7,12 @@ class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, "public"
     set :views, "app/views"
-
   end
 
   get "/" do
     @all_yaks = Yak.all
     puts @all_yaks
     erb :index
-
   end
 
   post '/new_yak' do
@@ -22,7 +20,7 @@ class ApplicationController < Sinatra::Base
     redirect "/"
   end
 
-  post'/login' do
+  post '/login' do
     User.create({:username => params[:username], :email => params[:email]})
     redirect "/"
   end
